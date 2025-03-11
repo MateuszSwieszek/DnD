@@ -7,4 +7,22 @@
     flex: 3; /* Make the placeholder container take up more space */
     height: 100%;
     margin-right: 20px;
-  }
+    width: 100%;
+    border: 2px dashed #ccc;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensure the map is the reference for absolute positioning */
+}
+
+.monster-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    position: absolute; /* Position the icon absolutely */
+    transform: translate(-50%, -50%); /* Center the icon at the cursor */
+}
