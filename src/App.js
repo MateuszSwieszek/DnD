@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CardListContainer from './components/card-list/card-list-container.component';
+import InteractiveMap from './components/interactive-map/interactive-map.component';
 
 class App extends Component {
   constructor() {
@@ -26,11 +27,14 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="app-title">Monsters Inc.</h1>
-        <CardListContainer 
-          monsters={monsters} 
-          searchField={searchField} 
-          onSearchChange={this.onSearchChange} 
-        />
+        <div className="app-container">
+          <InteractiveMap />
+          <CardListContainer 
+            monsters={monsters} 
+            searchField={searchField} 
+            onSearchChange={this.onSearchChange} 
+          />
+        </div>
       </div>
     );
   }

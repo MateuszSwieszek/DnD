@@ -11,4 +11,5 @@
   flex-direction: column;
   align-items: center;
   height: 100%; /* Make the card list container take up the full height of its parent container */
+  align-self: flex-start; /* Ensure the card list container is positioned on the right side */
 }

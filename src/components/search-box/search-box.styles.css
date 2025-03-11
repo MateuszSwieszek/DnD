@@ -7,3 +7,7 @@
   line-height: 30px;
   margin-bottom: 30px;
 }
+
+.monsters-search-box {
+  margin-bottom: 20px; /* Add some space below the search box */
+}
