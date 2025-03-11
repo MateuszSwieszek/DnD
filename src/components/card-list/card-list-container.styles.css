@@ -1,0 +1,14 @@
+.card-list-container {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1; /* Make the card list container take up less space */
+  max-width: 400px;
+  overflow-y: auto; /* Ensure vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* Make the card list container take up the full height of its parent container */
+}

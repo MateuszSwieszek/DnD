@@ -22,3 +22,14 @@ body {
   font-family: "Bigelow Rules", cursive;
 }
 
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 20px;
+}
+
+.monsters-search-box {
+  margin-bottom: 20px; /* Add some space below the search box */
+}

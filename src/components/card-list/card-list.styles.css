@@ -1,7 +1,7 @@
 .card-list {
-  width: 85vw;
+  width: 100%; /* Make the card-list take up the full width of its parent container */
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr; /* Ensure only one card per row */
   grid-gap: 20px;
 }

@@ -1,49 +1,36 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
-import CardList from './components/card-list/card-list.component';
-import SearchBox from './components/search-box/search-box.component';
-import {Component} from 'react';
+import CardListContainer from './components/card-list/card-list-container.component';
 
-class App extends Component{
-  constructor(){
+class App extends Component {
+  constructor() {
     super();
     this.state = {
       monsters: [],
       searchField: ''
-    }
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(users => this.setState({monsters: users}));
+      .then(response => response.json())
+      .then(users => this.setState({ monsters: users }));
   }
 
-  OnSearchChange = (event) => {
-    const searchField = event.target.value.toLocaleLowerCase();
-    this.setState(() => {
-      return {searchField: searchField}
-    });
-  };
-  
-  render(){
+  onSearchChange = (event) => {
+    this.setState({ searchField: event.target.value });
+  }
 
-    const {monsters, searchField} = this.state;
-    const {OnSearchChange} = this;
-
-    const filteredMonsters = monsters.filter(monster => {
-      return monster.name.toLowerCase().includes(searchField);
-    });
-
-    return(
+  render() {
+    const { monsters, searchField } = this.state;
+    return (
       <div className="App">
-        <h1 className="app-title"> Monsters Inc.</h1>
-        <SearchBox 
-          OnChangeHandler={OnSearchChange}
-          className="monsters-search-box"
-          placeholder="Search Monsters"
+        <h1 className="app-title">Monsters Inc.</h1>
+        <CardListContainer 
+          monsters={monsters} 
+          searchField={searchField} 
+          onSearchChange={this.onSearchChange} 
         />
-        <CardList monsters={filteredMonsters}/>
       </div>
     );
   }
